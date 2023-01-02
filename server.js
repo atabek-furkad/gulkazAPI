@@ -17,23 +17,13 @@ connectDB()
 
 const app = express()
 
-app.use(cors())
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+  optionSuccessStatus: 200,
+}
 
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*')
-
-  res.setHeader(
-    'Access-Control-Allow-Methods',
-    'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-  )
-
-  // Request headers you wish to allow
-  res.setHeader('Access-Control-Allow-Headers', '*')
-
-  res.setHeader('Access-Control-Allow-Credentials', true)
-
-  next()
-})
+app.use(cors(corsOptions))
 
 app.use(logger)
 
