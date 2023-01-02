@@ -16,6 +16,8 @@ connectDB()
 
 const app = express()
 
+app.use(cors())
+
 app.use(logger)
 
 // to be able to process objects send from input forms with POST method
