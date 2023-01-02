@@ -32,7 +32,7 @@ if (!fs.existsSync(path.join(__dirname, 'uploads'))) {
 // to be able to access uploads dir from frontend
 app.use(express.static(path.join(__dirname, 'uploads')))
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT
 
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
@@ -41,7 +41,5 @@ app.use(notFound)
 app.use(errorHandler)
 
 app.listen(PORT, () => {
-  console.log(
-    `Listening to server on port ${PORT} in ${process.env.NODE_ENV} mode`,
-  )
+  console.log(`Listening to server on port ${PORT}`)
 })
