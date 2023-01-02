@@ -8,6 +8,7 @@ const { errorHandler, notFound } = require('./middleware/errorMiddleware')
 const { logger } = require('./middleware/logger')
 const fs = require('fs')
 const cors = require('cors')
+const corsOptions = require('./config/corsOptions')
 
 // const products = require('./data/products')
 
@@ -16,12 +17,6 @@ dotenv.config()
 connectDB()
 
 const app = express()
-
-const corsOptions = {
-  origin: '*',
-  credentials: true,
-  optionSuccessStatus: 200,
-}
 
 app.use(cors(corsOptions))
 
