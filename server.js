@@ -30,7 +30,7 @@ if (!fs.existsSync(path.join(__dirname, 'uploads'))) {
 }
 
 // to be able to access uploads dir from frontend
-app.use(express.static(path.join(__dirname, 'uploads')))
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 const PORT = process.env.PORT
 
