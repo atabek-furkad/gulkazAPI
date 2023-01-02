@@ -7,6 +7,7 @@ const userRoutes = require('./routes/userRoutes')
 const { errorHandler, notFound } = require('./middleware/errorMiddleware')
 const { logger } = require('./middleware/logger')
 const fs = require('fs')
+const cors = require('cors')
 
 // const products = require('./data/products')
 
