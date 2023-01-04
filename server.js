@@ -7,8 +7,8 @@ const userRoutes = require('./routes/userRoutes')
 const { errorHandler, notFound } = require('./middleware/errorMiddleware')
 const { logger } = require('./middleware/logger')
 const fs = require('fs')
-const cors = require('cors')
-const corsOptions = require('./config/corsOptions')
+// const cors = require('cors')
+// const corsOptions = require('./config/corsOptions')
 
 // const products = require('./data/products')
 
@@ -18,7 +18,7 @@ connectDB()
 
 const app = express()
 
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 app.use(logger)
 
